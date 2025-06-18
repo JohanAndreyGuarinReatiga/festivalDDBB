@@ -1,1 +1,11 @@
-explicaciones breves, integrantes, y evidencias (capturas o resultados de las consultas).
+# Consultas
+
+
+## Expresiones Regulares
+Buscar bandas cuyo nombre empiece por la letra “A”.
+
+![alt text](image.png)
+
+Buscar asistentes cuyo nombre contenga "Gómez".
+
+![alt text](image-1.png)
