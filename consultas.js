@@ -1,0 +1,1 @@
+TODAS las consultas, funciones, transacciones e índices solicitados.
