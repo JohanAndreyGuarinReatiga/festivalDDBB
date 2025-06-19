@@ -1,3 +1,11 @@
+# Proyecto Mongo II - Festival
+
+## Participantes
+
+* Johan Guarin
+* Santiago Diaz
+* David Medina
+
 # Consultas
 
 
@@ -31,8 +39,9 @@ Calcular el promedio de duración de las presentaciones.
 ![alt text](image-5.png)
 
 
+## 2. Crear una función llamada bandasPorGenero(genero) que devuelva todas las bandas activas de ese género.
 
-
+![alt text](image-6.png)
 
 ## Transacciones (Requiere Replica set)
 
