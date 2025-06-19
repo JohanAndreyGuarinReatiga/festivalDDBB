@@ -39,3 +39,7 @@ db.presentaciones.aggregate([
       },
     },
   ])
+  
+  // Funciones en system.js
+// Crear una función llamada escenariosPorCiudad(ciudad) que devuelva todos los escenarios en esa ciudad.
+  db.system.js.insertOne({_id:"escenariosPorCiudad", value: new Code("function(ciudad) {return db.escenarios.find({ ciudad: ciudad });}")})

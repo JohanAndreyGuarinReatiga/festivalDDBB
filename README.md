@@ -23,3 +23,9 @@ Agrupar presentaciones por escenario y contar cuántas presentaciones hay por 
 Calcular el promedio de duración de las presentaciones.
 
 ![alt text](image-4.png)
+
+# Funciones en system.js
+
+## 1. Crear una función llamada `escenariosPorCiudad(ciudad)` que devuelva todos los escenarios en esa ciudad.
+
+![alt text](image-5.png)
