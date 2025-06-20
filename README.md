@@ -212,4 +212,7 @@ function reversarCompraBoleto(nombreAsistente, escenarioNombre, dia) {
 
 ```
 
+## Índices + Consultas
+
+// 1. Crear un índice en bandas.nombre y buscar una banda específica por nombre.
 
