@@ -211,3 +211,51 @@ function reversarCompraBoleto(nombreAsistente, escenarioNombre, dia) {
     session.endSession();
   }
 }
+
+
+//1. Crear un índice en bandas.nombre y buscar una banda específica por nombre.
+
+//Creación índicen en bandas.nombre.
+db.bandas.createIndex({ nombre: 1 })
+
+//Búsqueda de una banda específica por nombre.
+db.bandas.find({ nombre: "Bomba Estéreo" })
+
+
+//2. Crear un índice en presentaciones.escenario y hacer una consulta para contar presentaciones de un escenario.
+
+//Creación índice en presentacion.escenario.
+db.presentaciones.createIndex({ escenario: 1 });
+
+//conteo de presentaciones en "Escenario Principal"
+db.presentaciones.countDocuments({ escenario: "Escenario Principal" });
+
+
+//Contar presentaciones de un escenario.
+db.presentaciones.aggregate([
+  { $match: { escenario: "Escenario Principal" } },
+  { $count: "total_presentaciones" }
+]);
+
+
+
+//3.Crear un índice compuesto en asistentes.ciudad y edad, luego consultar asistentes de Bogotá menores de 27.
+
+
+//Creación índice compuesto en asistentes.ciudad.
+db.asistentes.createIndex({ ciudad: 1, edad: 1 });
+
+
+//Consultar asistentes de Bogotá menores de 27.
+db.asistentes.find(
+  {
+    ciudad: "Bogotá",
+    edad: { $lt: 30 }
+  },
+  {
+    _id: 0,
+    nombre: 1,
+    ciudad: 1,
+    edad: 1
+  }
+);

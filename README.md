@@ -235,48 +235,16 @@ function reversarCompra(nombreAsistente, nombreEscenario, dia) {
 
 ## Índices + Consultas
 
-```js
-//1. Crear un índice en bandas.nombre y buscar una banda específica por nombre.
-//Creación índicen en bandas.nombre.
-db.bandas.createIndex({ "bandas.nombre": 1 })
 
-//Búsqueda de una banda específica por nombre.
-db.tu_coleccion.find({ "bandas.nombre": "Bomba Estéreo" })
+//1. Crear un índice en bandas.nombre y buscar una banda específica por nombre.
+
+![alt text](BuscarBanda.png)
 
 //2. Crear un índice en presentaciones.escenario y hacer una consulta para contar presentaciones de un escenario.
-//Creación índice en presentacion.escenario.
-db.eventos.createIndex({ "presentaciones.escenario": 1 })
 
-//Contar presentaciones de un escenario.
-db.eventos.aggregate([
-  { $unwind: "$presentaciones" },
-  { $match: { "presentaciones.escenario": "Principal" } },
-  { $count: "total_presentaciones" }
-])
+![alt text](totalPresentaciones.png)
 
-//3.Crear un índice compuesto en asistentes.ciudad y edad, luego consultar asistentes de Bogotá menores de 30.
-//Creación índice compuesto en asistentes.ciudad.
-db.eventos.createIndex(
-{ "asistentes.ciudad": 1,
-"asistentes.edad": 1
-}
-)
+//3.Crear un índice compuesto en asistentes.ciudad y edad, luego consultar asistentes de Bogotá menores de 27.
 
-//Consultar asistentes de Bogotá menores de 30.
-db.eventos.aggregate([
-  { $unwind: "$asistentes" },
-  { $match: {
-      "asistentes.ciudad": "Medellín",
-      "asistentes.edad": { $lt: 27 }
-    }
-  },
-  { $project: {
-      _id: 0,
-      nombre: "$asistentes.nombre",
-      ciudad: "$asistentes.ciudad",
-      edad: "$asistentes.edad"
-    }
-  }
-])
-
-```
+![alt text](1.png)
+![alt text](2.png)
