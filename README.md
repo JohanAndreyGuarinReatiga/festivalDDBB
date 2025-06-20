@@ -231,5 +231,4 @@ function reversarCompra(nombreAsistente, nombreEscenario, dia) {
 }
 ```
 
-![alt text](shell2.png)
 
